@@ -1,0 +1,32 @@
+h1,h2,h3,p{
+    font-family: $main;
+}
+
+h4,h5,h6 {
+    font-family: $other;
+}
+
+p{
+    font-weight: 600;
+    font-size: .9rem;
+    letter-spacing: .1rem;
+}
+
+body{
+    box-sizing: border-box;
+}
+
+figure {
+    box-sizing: border-box;
+}
+
+body, html {
+    scroll-behavior: smooth;
+}
+
+@media only screen and (max-width: 50em) and (min-width: 12em){
+    .waterMark, .half-color-h1{
+        display: none !important;
+    }
+
+}

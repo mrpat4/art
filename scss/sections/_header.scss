@@ -1,0 +1,260 @@
+header {
+  color: $light-color;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  height: 100vh;
+
+  img {
+      width: 100%;
+      grid-column: 2/3;
+      grid-row: 1;
+      height: 100vh;
+  }
+
+  div.half-color{
+      background-color: $dark-color;
+      width: 100%;
+      grid-column: 1/2;
+      grid-row: 1;
+      height: 100vh;
+  }
+  h1{
+    grid-column: 1/3;
+    grid-row: 1;
+    text-align: left;
+    padding-top: 2em;
+    font-size: 5rem;
+    opacity: .05;
+  }
+  p{
+      grid-column: 1/3;
+      grid-row: 1;
+      text-align: left;
+      padding-left: 5em;
+      align-self: center;
+      font-family: $other;
+      font-weight: 100;
+      font-size: 2rem;
+      line-height: 2.3rem;
+      letter-spacing: .2rem;
+      position: relative;
+
+      span{
+          color:$yellow;
+          text-transform: uppercase;
+      }
+
+      &::before{
+        content: "";
+        display: block;
+        height: 2px;
+        width: 150px;
+        position: absolute;
+        bottom: -25px;
+        background-color: rgba($yellow, 0.8);
+      }
+
+      &::after{
+          content: "JOHN MAEDA";
+          display: block;
+          font-size: 1rem;
+          color: $yellow;
+          width: 100%;
+          margin-top: 1em;
+      }
+  }
+
+}
+
+a.menue-btn{
+    position: fixed;
+    text-decoration: none;
+    color:$yellow;
+    font-size: 40px;
+    top: 30px;
+    left:40px;
+    z-index: 5;
+    transition: transform .2s linear,top .5s ease-out 1s;
+    &:hover{
+        transform: rotate(90deg);
+    }
+}
+nav{
+    position:fixed;
+    background-color: rgba($yellow, .8);
+    width:50%;
+    height: 100%;
+    z-index: 7;
+    transform: rotateX(90deg);
+    transform-origin: 0 0;
+    transition:transform .75s ease-out .75s;
+
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 1.8rem;
+        font-family: $other;
+        font-weight: bolder;
+        letter-spacing: .1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        height: 80vh;
+
+        a{
+            text-decoration: none;
+            color: #fff;
+            width: fit-content;
+            text-transform: uppercase;
+            text-shadow: 0 5px 5px rgba($dark-color, 0.4);
+            transition: color 2s linear;
+
+            &:hover{
+                color: rgba($dark-color, 0.3);
+                text-shadow: none;
+            }
+        }
+
+        //list items transition effects
+        a#firsta{
+            transform: matrix(1, 0, 0, 1, 0, 56);
+            opacity: 0;
+            transition: transform .1s linear .2s,opacity .1s linear .2s;
+        }
+        a#seconda{
+            transform: matrix(1, 0, 0, 1, 0, 56);            
+            opacity: 0;
+            transition: transform .1s linear .3s,opacity .1s linear .3s;
+        }
+        a#thirda{
+            transform: matrix(1, 0, 0, 1, 0, 56);            
+            opacity: 0;
+            transition: transform .1s linear .4s,opacity .1s linear .4s;
+        }
+        a#fourtha{
+            transform: matrix(1, 0, 0, 1, 0, 56);            
+            opacity: 0;
+            transition: transform .1s linear .5s,opacity .1s linear .5s;
+        }
+        a#fiftha{
+            transform: matrix(1, 0, 0, 1, 0, 56);            
+            opacity: 0;
+            transition: transform .1s linear .6s,opacity .1s linear .6s;
+        }
+        a#sixtha{
+            transform: matrix(1, 0, 0, 1, 0, 56);            
+            opacity: 0;
+            transition: transform .1s linear .7s,opacity .1s linear .7s;
+        }
+
+    }
+
+    a.close {
+    position: absolute;
+    text-decoration: none;
+    color:#fff;
+    font-size: 40px;
+    bottom: 30px;
+    left:40px;
+    z-index: 7;
+    opacity: 0;
+    transition: transform .2s linear, opacity .1s linear .7s;
+
+        &:hover{
+            transform: rotate(90deg);
+        }
+    }
+    
+}
+
+.nav_is_open{
+    //menu btn
+    a.menue-btn{
+        top: -500px;
+        transition:top .2s ease-out;
+    }
+    //close btn
+    a.close{
+        opacity: 1;
+        transition: opacity .1s linear .4;
+    }
+    //list items
+    a#firsta, #seconda, #thirda, #fourtha, #fiftha, #sixtha{
+        transform: matrix(1, 0, 0, 1, 0, 0);
+        opacity: 1;
+        transition: color .2s linear;
+    }
+    a#firsta{
+      
+        transition: transform .1s linear .2s,opacity .1s linear .2s;
+    }
+    a#seconda{
+        
+        transition: transform .1s linear .3s,opacity .1s linear .3s;
+    }
+    a#thirda{
+      
+        transition: transform .1s linear .4s,opacity .1s linear .4s;
+    }
+    a#fourtha{
+       
+        transition: transform .1s linear .5s,opacity .1s linear .5s;
+    }
+    a#fiftha{
+        transition: transform .1s linear .6s,opacity .1s linear .6s;
+    }
+    a#sixtha {
+        transition: transform .1s linear .7s,opacity .1s linear .7s;
+    }
+    //navbar
+    nav{
+        transform: rotateX(0deg);
+        transition: transform .3s ease-out;
+    }
+}
+
+// Media queries for mobile devices :
+
+@media only screen and (max-width: 40em) {
+
+    header {
+        img {
+            grid-column: 1 /-1 !important;
+
+        }
+
+        div.half-color{
+            display: none;
+        }
+
+        p.quote{
+            padding: .5em;
+            margin : 0;
+            text-align:center;
+            font-size: 1.5rem;
+            background-color: rgba($dark-color, 0.3);
+
+                &::before{
+                    display:none;
+                }
+           
+        }
+    }
+
+}
+
+//nav medias
+
+@media only screen and (max-width: 60em) and (min-width: 12em) {
+    nav {
+        width: 100%;
+
+        ul {
+            font-size: 1.2rem;
+            align-items: center;
+        }
+    }
+}

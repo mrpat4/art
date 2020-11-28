@@ -1,0 +1,180 @@
+section.services{
+    width: 100%;
+    height: 800px;
+    display: grid;
+    grid-template-columns: 1.5fr 2fr;
+
+    img{
+        width: 100%;
+        height: 800px;
+        grid-column: 2/3;
+        grid-row: 1;
+    }
+
+    div.half-color{
+        min-width: 100%;
+        background-color: $dark-color;
+        grid-column: 1/2;
+        grid-row: 1;
+        height: 800px;
+        color: white;
+
+        h1.half-color-h1 {
+            color: $yellow;
+            grid-column: 1/2;
+            padding: 5em 0 0 1.7em;
+            position: relative;
+
+            span {
+                color: #fff;
+            }
+
+            &::before {
+                content: "";
+                width: 40%;
+                height: 120px;
+                border: 7px solid rgb(95, 95, 95);
+                display: block;
+                position: absolute;
+                opacity: 0.2;
+                top: 110px;
+                left: 70px;
+            }
+        }
+        p{
+            max-width: 45%;
+            padding-left:4em; 
+            font-size: .8rem;
+            letter-spacing: .1rem;
+
+            &::after{
+                content: "";
+                width: 25%;
+                height: 2px;
+                background-color: $yellow;
+                display: block;
+                margin-top: 3em;
+            }
+        }
+    }
+
+    h1.waterMark {
+        color: rgb(95, 95, 95);
+        opacity: .15;
+        font-weight: bolder;
+        font-size: 8rem;
+        text-align: right;
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    div.services-container{
+        grid-column: 1/3;
+        grid-row: 1;
+        width: 70%;
+        background-color: rgba(255, 255, 255, .9);
+        height: 590px;
+        padding: 0;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-self: flex-end;
+        margin: 5em 3em;
+        z-index: 2;
+
+        figure{
+            width: 40%;
+            margin: 0 auto;
+            margin-top: 10px;
+            padding: 1em;
+            padding-bottom: 0;
+            margin-bottom: 0;
+
+            i{
+                font-size: 2.5rem;
+                font-weight: 400;
+                color: $yellow;
+            }
+
+
+            h4{
+                font-size: 1rem;
+                padding-top: 0;
+                margin-top: 20px;
+
+                &::after{
+                    content: "";
+                    display: block;
+                    width: 8%;
+                    height: 2px;
+                    background-color: $yellow;
+                    margin-top: 10px;
+                }
+            }
+
+            figcaption p{
+                font-size: .9rem;
+                font-weight: 500;
+                letter-spacing: .02rem;
+                text-align: justify;
+                padding-bottom: 0;
+                margin-bottom: 0;
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 65em) and (min-width: 12em){
+    section.services{
+        height :auto;
+        background-image: url(../../img/Services.jpg);
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+
+        img {
+            display: none;
+        }
+        div.half-color{
+            min-width: 100%;
+            background-color: transparent;
+            grid-column: 1/-1;
+            grid-row: 1;
+            height: auto;
+            color: white;
+
+            .half-color-h1{
+                display: block !important;
+                grid-column: 1/-1 !important;
+                grid-row: 1;
+                margin-bottom: 2em; 
+            }
+
+            p {
+                max-width: 85%;
+                width: 85%;
+                padding-left:0;
+                margin: 0 auto;
+                color: $dark-color;
+                &::after{
+                    margin-top: 1em;
+                    margin-bottom: 2em;
+                }
+            }
+        }
+        div.services-container{
+            height: auto;
+            grid-column: 1/-1;
+            grid-row: 3;
+            width: 95%;
+            margin: 1em auto;
+            padding: 1em 0;
+            
+
+            figure {
+                width: 100%;
+            }
+        }
+    }
+}

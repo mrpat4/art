@@ -1,0 +1,47 @@
+Hi there :-)
+let me explain one or two things for you ;-)
+-------:
+
+every folder has its own category
+css
+img
+js
+scss
+
+this website is written with scss technology and 
+u can find all the files in scss folder
+
+we have 2 sub folders in scss :
+1.base
+2.sections
+
+---------------------
+ * in every folder u find a file with all.scss name,
+ i used that for link my scss files all together
+ so every all.scss in a folder include the other files and finaly in the
+ main.scss u can find that every all.scss files in the folders listet in here
+---------------------
+
+ 1.base contain of 
+    .colors(the colors code that i used for design)
+    .fonts(for all the fonts that i use)
+    .normalize(for reset some styles)
+    .body(for some of my own repeated styles)
+
+2.sections contain of
+    .all the main files for our theme
+every file in this folder is named after its section's class in index.html
+
+
+i commented all the sections in index.html
+
+------********---------
+***images are just for showing the looks of the theme
+none of them are allowed for using in the final work.
+--------*****----------
+if there is any problem or question i will be happy to help you out with that.
+
+best wishes Parham :-)
+----------------------------
+contact me at prhmpym@gmail.com
+---------------------------------/

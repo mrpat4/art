@@ -1,0 +1,198 @@
+section.projects {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+
+    div.half-color-light {
+        width: 100%;
+        background-color: $light-color;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        position: relative;
+
+        h1{
+            grid-column: 2/3;
+            color: $yellow;
+            font-weight: 900;
+            position: relative;
+            padding-top: 4em;
+            margin: 0;
+            grid-row: 1;
+
+            &::before {
+                content: "";
+                width: 60%;
+                height: 80px;
+                border: solid 5px rgba(116, 116, 116, 0.1);
+                display: block;
+                position: absolute;
+                top: 120px;
+                left: 50px;
+            }
+
+            span {
+                color: #000;
+                margin: 0;
+            }
+            
+        }
+
+        h3.waterMark{
+            position: absolute;
+            bottom: 50px;
+            right: 90px;
+            font-size: 9rem;
+            color: rgba(95, 95, 95, 0.1);
+            text-transform: uppercase;
+            padding:0;
+            margin:0;
+            
+        }
+
+        p{
+            grid-column: 1/4;
+            margin-top: 5em;
+            padding: 0 5em;
+            align-self: center;
+            grid-row: 2;
+            cursor: pointer;
+            line-height: 2em;
+            z-index: 3;
+        }
+    }
+
+    div.projects-pics{
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        figure {
+            display: inline-block;
+            max-width: 50%;
+            //height: auto;
+            margin: 0;
+            padding: 0;
+            position: relative;
+
+            img {
+                width: 100%;
+                padding: 0;
+                margin: 0;
+                height: 100%;
+            }
+
+            .overlay{
+                position: absolute;
+                top: 10px;
+                right: 10px;
+                left: 10px;
+                bottom: 10px;
+                background-color: rgba($yellow, 0.9);
+                text-align: center;
+                margin: 0;
+                padding: 0;
+                transition: .5s linear;
+                opacity: 0;
+                padding-top: 2em;
+
+                h1 {
+                    text-transform: uppercase;
+                    transform: translateY(-25px);
+                    transition: .5s linear;
+                    opacity: 0;
+                    
+                }
+
+                h5 {
+                    text-transform: uppercase;
+                    color: white;
+                    letter-spacing: .1rem;
+                    padding-top: 0;
+                    margin-top: 0;
+                    opacity: 0;
+                    transition: .5s linear .2s;
+                }
+            }
+        }
+
+    }
+}
+
+.projects-pics{
+    figure:hover div{
+    opacity: 1!important;
+
+    }
+
+    figure:hover div h1 {
+        transform: translateY(0)!important;
+        opacity: 1 !important;
+    }
+
+    figure:hover div h5 {
+        opacity: 1 !important;
+    }
+}
+
+
+@media only screen and (max-width: 50em) and (min-width:12em){
+    section.projects {
+        div.half-color-light {
+            display: block;
+            grid-column: 1/-1;
+
+            h1{
+                display:block;
+                margin : 0 auto 2em auto;
+                padding-left: 1em;
+                
+            }
+                
+            p{
+                display: inline;
+                margin-left: 3em;
+                padding: 2em;
+            }
+
+        }
+        div.projects-pics{
+            grid-column: 1/-1;
+            margin:2em 0;
+
+            
+            figure {
+                width: 50%;
+
+            }
+            h1 {
+                font-size: .9rem;
+                
+            }
+
+            h5 {
+
+                font-size: .8rem;
+            }
+        }
+    }
+
+}
+
+
+@media only screen and (max-width: 50em) and (min-width:40em) {
+    section.projects{
+        div.projects-pics{
+            
+            h1 {
+                font-size: 2rem;
+                
+            }
+
+            h5 {
+
+                font-size: 1.1rem;
+            }
+        }
+    }
+}

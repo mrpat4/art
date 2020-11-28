@@ -1,0 +1,193 @@
+section.contact {
+  width: 100%;
+  height: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #000;
+  position: relative;
+
+  div.big-half-image {
+    grid-column: 2/4;
+    width: 100%;
+    background-image: url(./../img/Contact.jpg);
+    background-position: center;
+    background-size: cover;
+    //opacity: .8;
+    height: 600px;
+    position: relative;
+    z-index: 2;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      height: 600px;
+      background-color: rgba(0, 0, 0, 0.4);
+      z-index: -1;
+    }
+
+    form {
+      display: block;
+      padding: 5em;
+      z-index: 3;
+      margin: 1px auto;
+
+      input,
+      textarea {
+        display: block;
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        border-bottom: 2px solid #fff;
+        margin: 2px auto;
+        margin-bottom: 10px;
+        padding: 10px;
+        width: 50%;
+
+        &::placeholder {
+          color: rgba($light-color, 0.9);
+          font-family: $main;
+        }
+
+        &:focus {
+          outline: none;
+          border-bottom: 3px solid $yellow;
+        }
+      }
+
+      textarea {
+        height: 100px;
+      }
+
+      button {
+        display: block;
+        width: 85px;
+        padding: 5px;
+        justify-self: center;
+        margin: 40px auto;
+        background-color: transparent;
+        outline: none;
+        border: none;
+        border: 1px solid lightgray;
+        color: lightgray;
+        padding: 10px;
+        font-family: $main;
+        font-weight: bolder;
+        letter-spacing: 0.2rem;
+        cursor: pointer;
+        transition: 0.3s ease-in-out;
+        text-align: center;
+
+        &:hover {
+          background-color: rgba($yellow, 0.7);
+        }
+      }
+    }
+
+    p {
+      color: #fff;
+      text-transform: uppercase;
+      padding-left: 80px;
+      padding-bottom: 10px;
+      text-decoration: none;
+      font-size: 0.8rem;
+
+      a {
+        text-decoration: none;
+        color: $yellow;
+        text-decoration: underline;
+      }
+    }
+  }
+
+  div.half-color {
+    grid-column: 1/2;
+    grid-row: 1;
+    background-color: $dark-color;
+    color: #fff;
+    padding-top: 20px;
+    padding-left: 5em;
+
+    h1 {
+      color: $yellow;
+      padding-top: 100px;
+      padding-bottom: 70px;
+      position: relative;
+
+      span {
+        color: #fff;
+      }
+
+      &::after {
+        content: "";
+        width: 150px;
+        height: 100px;
+        position: absolute;
+        top: 80px;
+        left: 50px;
+        border: solid 5px rgba(95, 95, 95, 0.1);
+      }
+    }
+
+    h6 {
+      padding: 0;
+      margin: 0;
+      margin-top: 20px;
+      margin-bottom: 5px;
+      font-size: 1rem;
+    }
+
+    a {
+      display: block;
+      margin-bottom: 5px;
+      text-decoration: none;
+      color: $yellow;
+      font-family: $main;
+      transition: 0.3s ease-in-out;
+      width: 50%;
+
+      &:hover {
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+
+  h3.waterMark {
+    position: absolute;
+    color: rgba(116, 116, 116, 0.05);
+    font-size: 8rem;
+    padding: 0;
+    margin: 0;
+    bottom: 100px;
+    text-transform: uppercase;
+  }
+}
+
+@media only screen and (max-width: 60em) and (min-width: 12em) {
+  section.contact {
+    height: auto;
+
+    div.big-half-image {
+      grid-column: 1/-1;
+      grid-row: 2;
+
+      input,
+      textarea {
+        width: 80% !important;
+      }
+    }
+    div.half-color {
+      grid-column: 1/-1;
+      grid-row: 1;
+      background-color: $dark-color;
+      color: #fff;
+      padding-top: 10px;
+      padding-bottom: 20px;
+      padding-left: 5em;
+    }
+  }
+}

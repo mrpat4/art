@@ -1,8 +1,12 @@
-#This is Art
+<h2>This is Art</h2>
 <ul>
-<li>html</li><br>
-<li>css</li><br>
-<li>js</li><br>
-<li>Well commented</li><br>
-<li>responsive</li><br>
+    <li>html</li>
+    <li>css</li>
+    <li>js</li>
+    <li>
+        <ul>
+            <li>Well commented</li>
+            <li>responsive</li>
+        </ul>
+    </li>
 </ul>
